@@ -1,7 +1,7 @@
 body {
+  margin: 0;
   width: 100vw;
   height: 100vh;
-  margin: 0;
 
   .container {
     width: 100%;
@@ -9,15 +9,21 @@ body {
     overflow: hidden;
 
     section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 0;
-      height: 0;
-      flex-direction: column;
+      top: 0;
+      left: 0;
       opacity: 0;
+      width: 100vw;
+      display: flex;
+      height: 100vh;
+      position: fixed;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
       transition: all 0.5s;
       font-family: Arial, Helvetica, sans-serif;
+      z-index: -1;
+      left: 100vw;
 
       &:nth-of-type(3) {
         background: linear-gradient(
@@ -36,13 +42,13 @@ body {
       }
 
       button {
-        background-color: rgb(72, 255, 118);
         border: 0;
-        margin-top: 10px;
-        border-radius: 10px;
         padding: 10px;
-        font-size: large;
         cursor: pointer;
+        margin-top: 20px;
+        font-size: large;
+        border-radius: 10px;
+        background-color: rgb(72, 255, 118);
 
         &#no {
           background-color: rgb(255, 97, 97);
@@ -62,8 +68,8 @@ body {
       &.visible {
         transition: all 1s;
         opacity: 1;
-        width: 100vw;
-        height: 100vh;
+        z-index: 1;
+        left: 0;
       }
     }
   }
